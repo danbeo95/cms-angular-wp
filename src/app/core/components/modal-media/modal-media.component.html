@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div class="modal fade" id="media-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Select Feature Image</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="d-flex flex-column h-100">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Launch demo modal
+              </button>
+          <ul class="nav nav-tabs">
+            <li class="nav-item cursor-pointer" (click)="onSelectTab(1)">
+              <a class="nav-link" [class.active]="tabSelected==1">Upload Images</a>
+            </li>
+            <li class="nav-item cursor-pointer" (click)="onSelectTab(2)">
+              <a class="nav-link" [class.active]="tabSelected==2">Select from media</a>
+            </li>
+          </ul>
+          <!-- container -->
+          <ng-container [ngSwitch]="tabSelected">
+            <app-modal-media-upload *ngSwitchCase="1" class="flex-grow-1" style="overflow:hidden" (onChange)="onUpLoadChange($event)"></app-modal-media-upload>
+            <app-modal-media-library *ngSwitchCase="2" class="flex-grow-1" style="overflow:hidden" [imageFromUpLoad]="mImageFromUpLoad"></app-modal-media-library>
+        </ng-container>
+      </div>
+    </div>
+    <div class="modal-footer p-2">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onClickApply()">Apply</button>
+    </div>
+  </div>

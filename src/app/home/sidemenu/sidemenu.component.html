@@ -1,0 +1,8 @@
+<ul class="nav flex-column h-100">
+    <li class="nav-item dropdown shadow-none" *ngFor="let page of pages" [routerLinkActive]="'router-active'" >
+      <a class="nav-link text-light" [routerLink]="page.link">{{page.name}}</a>
+      <div class="dropdown-menu" >
+        <a class="dropdown-item text-light" (click)="goToPage(child.link)" *ngFor="let child of page.children" >{{child.name}}</a>
+      </div>
+    </li>
+  </ul>

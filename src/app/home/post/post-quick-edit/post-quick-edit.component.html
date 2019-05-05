@@ -1,0 +1,26 @@
+<div class="container-fluid fadeIn">
+  <div class="row">
+    <!-- commom -->
+    <div class="col-12 col-md-4">
+      <app-post-quick-edit-commom [post]="mPost" (onChange)="onEditCommomChange($event)">
+      </app-post-quick-edit-commom>
+    </div>
+    <!-- category -->
+    <div class="col-12 col-md-4">
+      <app-post-quick-edit-category [post]="mPost" (onChange)="onCategoriesChange($event)">
+      </app-post-quick-edit-category>
+    </div>
+    <!-- tags -->
+    <div class="col-12 col-md-4">
+      <app-post-quick-edit-tag [post]="mPost" (onTagsChange)="onTagsChange($event)"></app-post-quick-edit-tag>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <button class="btn btn-secondary mr-3" type="button" (click)="onClickCancel()">Cancel</button>
+    <button class="btn btn-secondary" type="button" (click)="onClickSave()" *ngIf="!isLoading">Save</button>
+    <button class="btn btn-secondary" type="button" disabled *ngIf="isLoading">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      Loading...
+      <span class="sr-only"></span>
+    </button>
+  </div>

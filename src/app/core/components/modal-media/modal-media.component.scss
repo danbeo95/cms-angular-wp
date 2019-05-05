@@ -1,0 +1,18 @@
+#media-modal {
+    .modal-header{
+        border:none !important;
+    }
+    .modal-content{
+        height: 100% !important;
+    }
+    .modal-body{
+        overflow: hidden;
+    }
+    .modal-dialog{
+        max-width:100% !important;
+        width: 90% !important;
+        height: 90% !important;
+
+    }
+  
+}

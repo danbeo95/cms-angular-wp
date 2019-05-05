@@ -1,0 +1,66 @@
+<div class="table-responsive-sm" *ngIf="mFormGroup" [formGroup]="mFormGroup">
+  <!-- spinner -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" class="text-primary">
+          <div class="form-check">
+            <input id="check-all" class="form-check-input" type="checkbox" formControlName="check_all"
+              (change)="onClickCheckAll()">
+            <label for="check-all" class="form-check-label">Title</label>
+          </div>
+        </th>
+        <th scope="col">Author</th>
+        <th scope="col">Categories</th>
+        <th scope="col">Tag</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody formArrayName='posts'>
+      <tr>
+        <td colspan="6" class="text-center" *ngIf="mListPosts.length == 0">
+          <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </td>
+      </tr>
+      <ng-container *ngFor="let post of mListPosts;let i = index">
+        <tr [class.hide]="mPostIdQuickEdit==post.id">
+          <td class="text-primary">
+            <div class="form-check title">
+              <input id="{{post.id}}" class="form-check-input" type="checkbox" [formControlName]="i"
+                (change)="onClickCheckPost()">
+              <label for="{{post.id}}" class="form-check-label title" [innerHtml]="post.title.rendered">Text</label>
+            </div>
+            <app-post-list-actions class="actions" [post]="post"
+              (onQuickEditChange)="onQuickEditChange($event)"
+              (onMoveTrashChange)="onMoveTrashChange($event)"
+              (onDeleteChange)="onDeleteChange($event)"
+              (onRestoreChange)="onRestoreChange($event)"
+              >
+            </app-post-list-actions>
+          </td>
+          <td class="text-primary">
+            <div>{{post.author_name.name}}</div>
+          </td>
+          <td class="text-primary">
+            <span *ngFor="let cate of post.categories_name">{{cate.name}}, </span>
+          </td>
+          <td class="text-primary">
+            <span *ngFor="let tag of post.tags_name">{{tag.name}},</span>
+          </td>
+          <td class="text-primary">{{post.comment.length}}</td>
+          <td class="text-primary">{{post.date|date}}</td>
+        </tr>
+        <!-- quick edit -->
+        <tr [class.hide]="mPostIdQuickEdit!==post.id">
+          <td colspan="6">
+            <app-post-quick-edit [post]="post" (onCancel)="onCancelQuickEdit($event)"
+              (onSucess)="onUpdateSucess($event)"></app-post-quick-edit>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

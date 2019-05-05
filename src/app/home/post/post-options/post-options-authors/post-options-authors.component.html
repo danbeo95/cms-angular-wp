@@ -1,0 +1,12 @@
+<div class="border-bottom border-secondary">
+  <div class="form-row">
+    <div class="col align-self-center">
+      <label for="author-select">Author</label>
+    </div>
+    <div class="col">
+      <select id="author-select" class="form-control" [(ngModel)]="userModel" (change)="onSelectUser()">
+        <option *ngFor="let user of mUsers;let i = index" value="{{user.id}}">{{user.name}}</option>
+      </select>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+.state-item{
+    cursor: pointer;
+    font-size: 0.8rem;
+    &:hover{
+        font-weight: bold;
+    }
+}
+.actived{
+    font-weight: bold;
+}

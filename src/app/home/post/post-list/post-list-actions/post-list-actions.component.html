@@ -1,0 +1,23 @@
+<div class="row actions-container">
+  <div class="col-auto action-item" *ngIf="mPost.status !=='trash' ">
+    <button class="btn btn-link" (click)="onClickTrash()">
+      Trash
+    </button>
+    <button class="btn btn-link">
+      <a [href]="mPost.link" target="blank">
+        View
+      </a>
+    </button>
+    <button class="btn btn-link" (click)="onClickQuickEdit()">
+      Quick Edit
+    </button>
+  </div>
+  <div class="col-auto action-item" px-1 *ngIf="mPost.status == 'trash'">
+    <button class="btn btn-link" (click)="onClickRestore()">
+      Restore
+    </button>
+    <button class="btn btn-link" (click)="onClickDelete()">
+      Delete
+    </button>
+  </div>
+</div>

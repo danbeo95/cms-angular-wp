@@ -1,0 +1,10 @@
+<div class="border-bottom border-secondary">
+  <p class="cursor-pointer" data-target="#status-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="my-collapse">Status</p>
+  <div id="status-collapse" class="collapse ml-1" >
+      <div class="form-check" *ngFor="let status of mStatus" >
+        <input id="{{status}}" class="form-check-input cursor-pointer" type="radio" name="status-radio" value="{{status}}" 
+        [(ngModel)]="statusSelect" (change)="onStatusChange()">
+        <label for="{{status}}" class="form-check-label cursor-pointer text-capitalize">{{status}}</label>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<!-- post state -->
+<div class="row align-items-center py-3">
+  <div class="col-12 col-md-9">
+    <app-post-list-state (onStateChange)="onStateChange($event)"></app-post-list-state>
+    <app-post-list-actions1 (onDeleteChange)="onDeleteChange()"></app-post-list-actions1>
+  </div>
+  <!-- search end pagination -->
+  <div class="col-12 col-md-3 text-left no-gutters">
+    <app-post-search (onSearchChange)="onSearchChange($event)"></app-post-search>
+    <app-post-list-pagination (onNextChange)="onNextChange($event)"
+    (onPrevChange)="onPrevChange($event)"
+    [canNextPage]="canNextPage"
+    ></app-post-list-pagination>
+  </div>
+</div>
+<!-- post table list -->
+<app-post-list-table [posts]="mListPosts"></app-post-list-table>

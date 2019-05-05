@@ -1,0 +1,18 @@
+<div class="d-flex h-100 flex-column border-bottom border-secondary wrap">
+  <div class="text-right p-0 mb-3 border-bottom">
+    <app-btn-loading [loading]="isLoading" [text]="'Publish'" (onClick)="onPusblish()"></app-btn-loading>
+  </div>
+
+  <div class="row flex-grow-1 m-0">
+    <div class="col-9" [formGroup]="mFormGroup">
+      <input id="" class="form-control mb-3 form-title" placeholder="Enter title here.." formControlName='title'>
+      <app-ngx-editor [minHeight]="'200px'" [placeholder]="'Enter content here...'" [spellcheck]="true"
+        formControlName='html_content'>
+      </app-ngx-editor>
+    </div>
+    <div class="col-3 p-0 options">
+      <app-post-options #options>
+      </app-post-options>
+    </div>
+  </div>
+</div>

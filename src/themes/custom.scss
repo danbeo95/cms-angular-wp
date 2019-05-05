@@ -1,0 +1,15 @@
+// add variable
+
+
+// overite bootstrap
+@import './variables.scss';
+
+// Optional
+@import "../node_modules/bootstrap/scss/bootstrap";
+.cursor-pointer{cursor: pointer;}
+.cursor-croshair{cursor: crosshair;}
+.cursor-eresize{cursor: e-resize;}
+.cursor-move{cursor: move;}
+.hide{
+    display: none !important;
+}

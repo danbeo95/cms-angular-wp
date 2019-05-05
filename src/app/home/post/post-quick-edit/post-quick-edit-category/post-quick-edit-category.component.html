@@ -1,0 +1,7 @@
+<p>Categories</p>
+<div class="container" [formGroup]="mFormGroup">
+  <div class="form-check" *ngFor="let cate of mCategoriesList;let i = index" formArrayName='categories'>
+    <input id="{{cate.id}}" class="form-check-input" type="checkbox" value="{{cate.id}}" formControlName="{{i}}" (change)="onCheckForm()">
+    <label for="{{cate.id}}" class="form-check-label">{{cate.name}}</label>
+  </div>
+</div>

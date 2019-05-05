@@ -1,0 +1,27 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination m-0 justify-content-end">
+    <!-- <li class="page-item">
+      <a class="page-link" aria-label="Previous">
+        <span aria-hidden="true" class="pagination-icon fa fa-angle-double-right text-secondary" style="transform:rotate(180deg)"></span>
+      </a>
+    </li> -->
+    <li class="page-item" (click)="onClickPrev()" [class.disabled]="mPage===1" >
+      <a class="page-link" >
+        <span class="fas fa-chevron-right pagination-icon  text-secondary" style="transform:rotate(180deg)"></span>
+      </a>
+    </li>
+    <li class="page-item"><span class="page-link">{{mPage}}</span></li>
+    <!-- <li class="page-item"><span class="page-link border-top-0 border-bottom-0" href="#">of</span></li>
+    <li class="page-item"><span class="page-link" href="#">3</span></li> -->
+    <!-- <li class="page-item">
+      <a class="page-link"  aria-label="Previous">
+        <span aria-hidden="true" class="pagination-icon fa fa-angle-double-right  text-secondary"></span>
+      </a>
+    </li> -->
+    <li class="page-item"  (click)="onClickNext()" [class.disabled]="!canNextPage">
+      <a class="page-link">
+        <span class="fas fa-chevron-right pagination-icon  text-secondary"></span>
+      </a>
+    </li>
+  </ul>
+</nav>

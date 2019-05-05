@@ -1,0 +1,8 @@
+<div class="border-bottom border-secondary">
+  <p>Tags</p>
+  <tag-input [(ngModel)]='items' (onTextChange)="onTextChange($event)" (onSelect)="onSelected($event)"
+    (onRemove)="onItemRemoved($event)" (onTextChange)="onTextChange($event)" (onAdd)="onItemAdded($event)">
+    <tag-input-dropdown [autocompleteItems]="autocompleteItems">
+    </tag-input-dropdown>
+  </tag-input>
+</div>

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap';
+@import './themes/custom';
+
+// for rest
+html,body{
+    min-height: 100%;
+    height: 100% !important;
+}
+.modal-backdrop{
+    z-index: 1000;
+}
+$app-color-bg:#23282d;

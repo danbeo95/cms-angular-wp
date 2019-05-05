@@ -1,0 +1,16 @@
+.actions-container{
+    font-size: 10px;
+    font-weight: normal !important;
+    .action-item:hover{
+        color:red;
+    }
+    .btn{
+        font-size: 10px;
+    }
+}
+.action-item{
+    opacity: 0;
+}
+.actions-container:hover .action-item{
+    opacity: 1;
+}

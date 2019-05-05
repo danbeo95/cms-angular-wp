@@ -1,0 +1,7 @@
+<button class="btn btn-primary" type="button" *ngIf="!isLoading" (click)="onSubmit()">
+    {{text}}
+</button>
+<button class="btn btn-primary" type="button" disabled *ngIf="isLoading">
+  <span class="spinner-border spinner-border-sm text-secondary" role="status" aria-hidden="true"></span>
+  Loading...
+</button>

@@ -1,0 +1,18 @@
+td,label {
+    cursor: pointer !important;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+tr td:first-child .title{
+    &:hover{
+        color:blue !important;
+    }
+}
+// .actions {
+//     display: block;
+// }
+// tr td:first-child:hover .actions{
+//     opacity:1 !important;
+//     display: block;
+
+// }

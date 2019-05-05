@@ -1,0 +1,7 @@
+<div class="container">
+  <button ngfSelect [(file)]="mFile" class="btn btn-secondary" accept="image/*" multiple (click)="onClickSelect()">
+    Select Your Image
+  </button>
+  <img [ngfSrc]="mFile" class="mt-3" width="30%" *ngIf="mFile">
+  <app-btn-loading [text]="'Upload'" [loading]="isLoading" *ngIf="mFile" (click)="onClickUpload()" class="mt-3"></app-btn-loading>
+</div>

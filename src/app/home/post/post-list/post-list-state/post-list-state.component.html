@@ -1,0 +1,5 @@
+<div class="row">
+  <div class="col-atuo" *ngFor="let state of mStates;let i = index " [class.actived]="i==stateSelected" (click)="onClickState(state)">
+    <span class="text-primary px-3 state-item">{{state.name}}</span>
+  </div>
+</div>

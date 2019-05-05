@@ -1,0 +1,7 @@
+<div class="row mt-3">
+    <div class="form-group col-3">
+        <select id="my-input" class="form-control" [(ngModel)]="mSelectModel" (change)="onSelect()">
+          <option *ngFor="let action of mActions" [value]="action.value">{{action.name}}</option>
+        </select>
+      </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="container-fluid h-100" style="overflow:auto" *ngIf="mFormGroup">
+<div class="row mt-3 h-100"  *ngIf="mImage">
+  <h6 class="text-secondary">Detail</h6>
+  <div class="col-12 p-0">
+    <img [src]="mImage.source_url" alt="" class="image-selected">
+  </div>
+  <div class="col-12 p-0 image-detail pb-3">
+    <div>{{mImage.title.rendered}}</div>
+    <div class="text-muted">
+      <small> {{mImage.date|date}}</small>
+    </div>
+  </div>
+  <div class="col-12 p-0">
+    <a href="" class="text-danger">
+      <small>Delete image</small>
+    </a>
+  </div>
+  <div class="col-12 p-0 border-top border-secondary pt-3" [formGroup]="mFormGroup" >
+    <div class="form-group form-row align-items-center">
+      <small for="inputEmail3" class="col-md-3 col-12 text-muted">Link</small>
+      <div class="col-md-9 col-12">
+        <input type="text" class="form-control" readonly placeholder="link" formControlName="link">
+      </div>
+    </div>
+    <div class="form-group form-row align-items-center">
+      <small for="inputEmail3" class="col-md-3 col-12 text-muted">Title</small>
+      <div class="col-md-9 col-12">
+        <input type="text" class="form-control" placeholder="title" formControlName="title">
+      </div>
+    </div>
+    <div class="form-group form-row align-items-center">
+      <small for="inputEmail3" class="col-md-3 col-12 text-muted">Caption</small>
+      <div class="col-md-9 col-12">
+        <textarea type="text" class="form-control" placeholder="Caption" formControlName="caption"></textarea>
+      </div>
+    </div>
+    <div class="form-group form-row align-items-center">
+      <small for="inputEmail3" class="col-md-3 col-12 text-muted">Alt Text</small>
+      <div class="col-md-9 col-12">
+        <input type="text" class="form-control" placeholder="alt text" formControlName="alt_text" >
+      </div>
+    </div>
+    <div class="form-group form-row align-items-center">
+      <small for="inputEmail3" class="col-md-3 col-12 text-muted">Description</small>
+      <div class="col-md-9 col-12">
+        <textarea type="text" class="form-control" placeholder="description" formControlName="description"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

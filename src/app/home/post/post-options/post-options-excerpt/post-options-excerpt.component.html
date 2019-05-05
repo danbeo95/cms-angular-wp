@@ -1,0 +1,9 @@
+<div class="border-bottom border-secondary">
+  <p data-target="#excerpt-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="my-collapse"
+    class="cursor-pointer">Excerpt </p>
+  <div id="excerpt-collapse" class="collapse">
+    <div class="form-group">
+      <textarea id="excerpt-textarea" class="form-control" rows="3" [(ngModel)]="text" (keyup)="onTextChange()"></textarea>
+    </div>
+  </div>
+</div>

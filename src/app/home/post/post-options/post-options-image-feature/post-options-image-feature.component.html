@@ -1,0 +1,13 @@
+<div class="border-bottom border-secondary">
+<p  data-target="#feature-image-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="my-collapse" class="cursor-pointer">Feature Image</p>
+<div id="feature-image-collapse" class="collapse">
+    <div class="mb-2" *ngIf="mImage">
+      <img [src]="mImage.source_url" class="image-feature" alt="">
+    </div>
+    <div class="text-center p-3">
+      <button class="btn btn-outline-secondary" type="button" (click)="onClickAddImage()">
+        {{mImage ? 'Change your image' : 'Select Your Image'}}
+      </button>
+    </div>
+</div>
+</div>

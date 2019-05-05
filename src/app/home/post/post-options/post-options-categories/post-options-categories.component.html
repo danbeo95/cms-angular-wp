@@ -1,0 +1,23 @@
+<div class="border-bottom border-secondary">
+    <p data-target="#collapse-categories" data-toggle="collapse" aria-expanded="false" aria-controls="my-collapse"
+    class="cursor-pointer">Categories</p>
+  <div id="collapse-categories" class="collapse" [formGroup]="mFormGroup">
+    <input id="" class="form-control" type="text" placeholder="search categories"
+      (keyup)="onSearchCategories($event.target.value)">
+    <div class="categories-list" formArrayName='categories'>
+      <div class="d-flex justify-content-center mt-3" *ngIf="isLoading">
+        <div class="spinner-border spinner-border-sm text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-3" *ngIf="!isLoading&&mCategories.length==0">
+         No result !
+        </div>
+      <div class="form-check cursor-pointer" *ngFor="let cate of mCategories;let i = index">
+        <input id="{{cate.id}}" class="form-check-input" type="checkbox" [formControlName]="i"
+          (change)="onSelectCategory()">
+        <label for="{{cate.id}}" class="form-check-label" class="cursor-pointer">{{cate.name}}</label>
+      </div>
+    </div>
+  </div>
+</div>

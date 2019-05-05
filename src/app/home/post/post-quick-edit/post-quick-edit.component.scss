@@ -1,0 +1,14 @@
+.fadeIn{
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+@keyframes fadeIn{
+    0%{
+       transform: translateY(-100%)
+    }
+    100%{
+        transform: translateY(0%)
+    }
+}
